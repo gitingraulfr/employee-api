@@ -66,7 +66,7 @@ public class EmployeeController {
     @PostMapping
     public ResponseEntity<List<EmployeeDTO>> createEmployees(
             @Parameter(description = "List of employees to create")
-            @Valid @RequestBody List<EmployeeCreateDTO> dtos) {
+            @Valid @RequestBody List<EmployeeDTO> dtos) {
         return ResponseEntity.ok(employeeService.createMultipleEmployees(dtos));
     }
 

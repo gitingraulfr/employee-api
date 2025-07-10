@@ -92,6 +92,65 @@
           "path": ["api", "v1", "employees", "1"]
         }
       }
+    },
+    {
+      "name": "Search Employees by Name",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/employees/search?name=John",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "employees",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "John",
+              "description": "Name to search for"
+            }
+          ]
+        },
+        "description": "Retrieves a list of employees whose names match the search criteria"
+      },
+      "response": [
+        {
+          "name": "Successful Response",
+          "originalRequest": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/employees/search?name=John",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "employees",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "John"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n    {\n        \"id\": 1,\n        \"name\": \"John Doe\",\n        \"position\": \"Developer\",\n        \"salary\": 75000.00\n    }\n]"
+        }
+      ]
     }
   ]
 }
